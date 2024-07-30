@@ -1,0 +1,83 @@
+@import "~bootstrap/scss/bootstrap";
+
+// Utils
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+
+// Header
+
+.logo {
+    width: 130px;
+
+    img {
+        border-radius: 20px;
+    }
+}
+
+
+// Main
+
+.img-container {
+    width: 300px;
+}
+
+ul {
+
+    .title {
+        color: black;
+    }
+
+    i {
+        font-size: 13px;
+    }
+}
+
+
+// Dashboard
+
+.dash-img-container {
+    height: 200px;
+
+    img {
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .dash-img-container {
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .dash-img-container {
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dash-img-container {
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .dash-img-container {
+        height: 220px;
+    }
+}
