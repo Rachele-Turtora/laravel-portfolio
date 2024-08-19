@@ -79,6 +79,12 @@
             @endforeach
             @endif
         </div>
+
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name="status" id="status" value="in evidenza">
+            <label class="form-check-label" for="status"> In evidenza </label>
+        </div>
+
         <button type="submit" class="btn btn-outline-secondary">Crea progetto</button>
     </form>
 </div>

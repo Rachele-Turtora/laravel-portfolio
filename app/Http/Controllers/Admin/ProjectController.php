@@ -54,6 +54,7 @@ class ProjectController extends Controller
         $project->description = $data['description'];
         $project->slug = Str::of($project->title)->slug('-');
         $project->cover_img = $img_path;
+        $project->status = $data['status'];
         $project->type_id = $data['type_id'];
         $project->user_id = Auth::user()->id;
 

@@ -14,6 +14,10 @@
                     </div>
                     <h4>{{$project->title}}</h4>
                     <p>{{$project->description}}</p>
+                    <div class="rounded w-50 p-2 text-center
+                        {{$project->status == 'in draft' ? 'bg-warning-subtle' : 'bg-success-subtle'}}">
+                        {{$project->status}}
+                    </div>
                 </div>
             </a>
         </div>

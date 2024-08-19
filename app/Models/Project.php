@@ -10,13 +10,13 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'slug', 'cover_img', 'type_id'];
+    protected $fillable = ['title', 'description', 'slug', 'cover_img', 'status', 'type_id'];
     protected $appends = ['cover_img_url'];
 
     protected function coverImgUrl(): Attribute
     {
         return new Attribute(
-            get: fn () => env('APP_FRONTEND_IMG_URL', 'http//localhost') . $this->cover_img
+            get: fn() => env('APP_FRONTEND_IMG_URL', 'http//localhost') . $this->cover_img
         );
     }
 

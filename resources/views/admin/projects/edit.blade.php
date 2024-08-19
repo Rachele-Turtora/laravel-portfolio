@@ -85,6 +85,11 @@
             @endforeach
             @endif
         </div>
+
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name="status" id="status" value="in evidenza" {{($project->status == "in evidenza") ? 'checked' : ''}}>
+            <label class="form-check-label" for="status"> In evidenza </label>
+        </div>
         <button type="submit" class="btn btn-outline-secondary">Modifica progetto</button>
     </form>
 </div>
