@@ -8,9 +8,18 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $projects = Project::with('type')->paginate(3);
+
+        $searchTitle = $request->input('title');
+
+        $query = Project::with('type');
+
+        if ($searchTitle) {
+            $query->where('title', 'like', '%' . $searchTitle . '%');
+        }
+
+        $projects = $query->paginate(3);
 
         return response()->json([
             "success" => true,
