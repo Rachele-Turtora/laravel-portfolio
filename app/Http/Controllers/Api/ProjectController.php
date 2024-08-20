@@ -13,7 +13,7 @@ class ProjectController extends Controller
 
         $searchTitle = $request->input('title');
 
-        $query = Project::with('type');
+        $query = Project::with('type')->where('status', 'in evidenza');
 
         if ($searchTitle) {
             $query->where('title', 'like', '%' . $searchTitle . '%');

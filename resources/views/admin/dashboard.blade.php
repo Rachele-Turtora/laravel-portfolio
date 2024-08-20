@@ -2,7 +2,16 @@
 
 @section('content')
 <div class="container">
-    <h2 class="mx-2 my-3">I tuoi progetti</h2>
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="mx-2 my-3">I tuoi progetti</h2>
+        <form method="GET" action="{{route('admin.dashboard')}}">
+            <select class="form-select w-50 h-75" name="status" onchange="this.form.submit()">
+                <option value="" {{request('status') == '' ? 'selected' : ''}}>Tutti</option>
+                <option value="in draft" {{request('status') == 'in draft' ? 'selected' : ''}}>In draft</option>
+                <option value="in evidenza" {{request('status') == 'in evidenza' ? 'selected' : ''}}>In evidenza</option>
+            </select>
+        </form>
+    </div>
 
     <div class="row d-flex flex-wrap">
         @foreach ($projects as $project)
