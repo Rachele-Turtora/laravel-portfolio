@@ -51,6 +51,8 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
 
+        $img_path = $request->hasFile('cover_img') ? $request->cover_img->store('uploads') : NULL;
+
         $project = new Project();
 
         $project->title = $data['title'];
@@ -58,6 +60,7 @@ class ProjectController extends Controller
         $project->slug = Str::of($project->title)->slug('-');
         $project->type_id = $data['type_id'];
         $project->status = $data['status'];
+        $project->cover_img = $img_path;
 
         $project->save();
 
